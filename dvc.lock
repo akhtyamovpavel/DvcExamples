@@ -32,10 +32,10 @@ stages:
       size: 12111718
     params:
       params.yaml:
-        split.seed: 42
+        split.seed: 48
         split.test_size: 0.25
     outs:
     - path: generated_data/train_val
-      md5: 595a2ca357137c9530a5faecfc548492.dir
+      md5: c9af14cc85f916c1934c51164601d656.dir
       size: 12111730
       nfiles: 2
