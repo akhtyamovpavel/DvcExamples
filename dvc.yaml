@@ -22,3 +22,10 @@ stages:
     - split.test_size
     outs:
     - generated_data/train_val
+  train_model:
+    cmd: python train_model.py --input generated_data/train_val
+    deps:
+    - generated_data/train_val
+    metrics:
+    - metrics.json:
+        cache: false
