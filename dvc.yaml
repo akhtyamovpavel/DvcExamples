@@ -1,0 +1,7 @@
+stages:
+  extract_dataset:
+    cmd: mkdir -p dataset && cd dataset && unzip ../vk-publics-classification.zip
+    deps:
+    - vk-publics-classification.zip
+    outs:
+    - dataset

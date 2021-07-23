@@ -1,0 +1,13 @@
+schema: '2.0'
+stages:
+  extract_dataset:
+    cmd: mkdir -p dataset && cd dataset && unzip ../vk-publics-classification.zip
+    deps:
+    - path: vk-publics-classification.zip
+      md5: a4f6aee4063aebcc4a45641f0ceb1936
+      size: 4146563
+    outs:
+    - path: dataset
+      md5: 15bafb84941719557a0e37df093a76df.dir
+      size: 14344754
+      nfiles: 4
