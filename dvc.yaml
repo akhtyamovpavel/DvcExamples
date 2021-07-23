@@ -5,3 +5,10 @@ stages:
     - vk-publics-classification.zip
     outs:
     - dataset
+  prepare_data:
+    cmd: mkdir -p generated_data && python prepare_data.py --input dataset/train.csv
+      --output generated_data/train.csv
+    deps:
+    - dataset
+    outs:
+    - generated_data/train.csv

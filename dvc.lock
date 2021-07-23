@@ -11,3 +11,15 @@ stages:
       md5: 15bafb84941719557a0e37df093a76df.dir
       size: 14344754
       nfiles: 4
+  prepare_data:
+    cmd: mkdir -p generated_data && python prepare_data.py --input dataset/train.csv
+      --output generated_data/train.csv
+    deps:
+    - path: dataset
+      md5: 15bafb84941719557a0e37df093a76df.dir
+      size: 14344754
+      nfiles: 4
+    outs:
+    - path: generated_data/train.csv
+      md5: e007373d64cfc48115a926705e431e2d
+      size: 12111718
