@@ -12,3 +12,13 @@ stages:
     - dataset
     outs:
     - generated_data/train.csv
+  train_val_split:
+    cmd: python train_val_split.py --input generated_data/train.csv --output_folder
+      generated_data/train_val
+    deps:
+    - generated_data/train.csv
+    params:
+    - split.seed
+    - split.test_size
+    outs:
+    - generated_data/train_val

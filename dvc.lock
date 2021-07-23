@@ -23,3 +23,19 @@ stages:
     - path: generated_data/train.csv
       md5: e007373d64cfc48115a926705e431e2d
       size: 12111718
+  train_val_split:
+    cmd: python train_val_split.py --input generated_data/train.csv --output_folder
+      generated_data/train_val
+    deps:
+    - path: generated_data/train.csv
+      md5: e007373d64cfc48115a926705e431e2d
+      size: 12111718
+    params:
+      params.yaml:
+        split.seed: 42
+        split.test_size: 0.25
+    outs:
+    - path: generated_data/train_val
+      md5: 595a2ca357137c9530a5faecfc548492.dir
+      size: 12111730
+      nfiles: 2
