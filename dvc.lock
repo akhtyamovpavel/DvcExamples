@@ -46,7 +46,10 @@ stages:
       md5: c9af14cc85f916c1934c51164601d656.dir
       size: 12111730
       nfiles: 2
+    params:
+      params.yaml:
+        train.ngram_range: 2
     outs:
     - path: metrics.json
-      md5: 977621b0c80cd7c0f28d6385d32aa284
+      md5: 238690319386dc145105ad8aaca4a859
       size: 84

@@ -1,3 +1,6 @@
 split:
   test_size: 0.25
   seed: 48
+
+train:
+  ngram_range: 2

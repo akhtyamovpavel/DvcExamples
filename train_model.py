@@ -9,6 +9,7 @@ from argparse import ArgumentParser
 import os
 
 import json
+import yaml
 
 
 def parse_args():
@@ -17,10 +18,16 @@ def parse_args():
     return parser.parse_args()
 
 
+def read_config():
+    with open('params.yaml', 'r') as fp:
+        return yaml.safe_load(fp)['train']
+
+
 if __name__ == '__main__':
     args = parse_args()
+    params = read_config()
     pipeline = Pipeline([
-        ('tfidf', TfidfVectorizer()),
+        ('tfidf', TfidfVectorizer(ngram_range=(1, params['ngram_range']))),
         ('lr', LogisticRegression())
     ])
 
